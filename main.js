@@ -2,6 +2,7 @@
 const target = document.querySelectorAll('[data-fly]');
 const animationClass = 'animate';
 
+
 function animeScroll(){
     
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
@@ -19,17 +20,23 @@ window.addEventListener('scroll', function(){
     animeScroll();
 })
 
+
+
 $(".icon-menu").click(function(){
-  document.getElementById("quadrado").style.opacity = "1";
-  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinhaWhite.png";
+  var largura = window.innerWidth;
   document.getElementById("html").style.overflowY = "hidden";
+  document.getElementById("quadrado").style.opacity = "1";
+  if (largura > 800){
+  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinhaWhite.png";
+  }
 })
 
 $(".icon-x, #fechar").click(function(){
-  document.getElementById("quadrado").style.opacity = "0";
-  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinha.png";
   document.getElementById("html").style.overflowY = "visible";
+  document.getElementById("quadrado").style.opacity = "0"; 
+  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinha.png";
 })
+
 
 
 
@@ -84,6 +91,7 @@ function changeHeaderWhenScroll() {
 /* Testimonials carousel slider swiper */
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
+  spaceBetween: 30,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
@@ -105,6 +113,7 @@ const swiper = new Swiper('.swiper-container', {
   }
 })
 
+
 /* ScrollReveal: Mostrar elementos quando der scroll na página */
 const scrollReveal = ScrollReveal({
   origin: 'top',
@@ -119,7 +128,7 @@ scrollReveal.reveal(
   #sobre .image, #sobre .text,
   #projetos header, #contato p, #contato .links,
   #home .avatar, #sobre .title-2,
-  footer .brand, footer .social
+  footer .brand, footer .social, #skills .title-2, #skills .white
   `,
   { interval: 100 }
 )
