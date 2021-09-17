@@ -5,6 +5,8 @@
      --base-color: hsl(var(--hue), 36%, 57%);
      --base-color-second: hsl(256, 100%, 60%);
      --base-color-alt: hsl(var(--hue), 94%, 63%);
+     --base-color-footer: #4b12b6;
+     --base-color-footer-second: #5314c9;
      --title-color: hsl(var(--hue), 41%, 10%);
      --text-color: hsl(0, 0% ,46%);
      --text-color-light: hsl(0, 0% ,98%);
@@ -31,7 +33,18 @@ body{
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased;
+    transition: background 0.2s linear;
 }
+
+body.dark{
+    --body-color: hsl(var(--hue), 41%, 10%);
+    --title-color: hsl(0, 0% ,98%);
+    --base-color-alt: hsl(var(--hue), 94%, 33%);
+     --base-color-second: hsl(256, 66%, 30%);
+     --base-color-footer: #1f074d;
+     --base-color-footer-second: #391085;
+}
+
 
 ul{
     list-style: none;
@@ -105,6 +118,7 @@ main{
     left: 0;
     background-color: var(--body-color);
     width: 100%;
+    transition: background 0.2s linear;
 }
 
 #header .caixa-logo{
@@ -242,6 +256,47 @@ main{
         visibility: visible;
         opacity: 1;
         top: 1.5rem;
+    }
+
+    .label {
+        cursor: pointer;
+        text-indent: -9999px;
+        z-index: 99;
+        width: 52px;
+        height: 27px;
+        background: var(--title-color);
+        float: right;
+        border-radius: 100px;
+        position: relative;
+        margin-right: 1rem;
+        transition: 0.3s;
+    }
+
+    nav input[type=checkbox]{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    nav .label::after{
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background-color: var(--body-color);
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    nav .label:active:after {
+        width: 40px;
+    }
+
+    nav .checkbox:checked + .label::after{
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
     }
 
 /*////Home////*/
@@ -463,7 +518,7 @@ main #home{
 #sobre a{
     background: linear-gradient( var(--base-color-alt), #4c3fff);
     font: 500 1rem "Poppins", sans-serif;
-    color: var(--body-color);
+    color: hsl(0, 0% ,98%);
     border-radius: 12px;
     height: 3.5rem;   
     width: 100%;
@@ -658,7 +713,7 @@ transform: scale(1.15,1.15);
 
 #skills #habilidades .dividider-2{
     border-style: solid;
-    border-color: var(--title-color);
+    border-color: hsl(var(--hue), 41%, 10%);
     height: 10px;
     width: 25%;
     position: absolute;
@@ -731,7 +786,7 @@ transform: scale(1.15,1.15);
     top:0;
     left: 0;
     padding: 10px 0;
-    color: black;
+    color: var(--title-color);
     font-size: 1.2rem;
     pointer-events: none;
     transition: .5s;
@@ -755,22 +810,28 @@ transform: scale(1.15,1.15);
     padding: 0.75rem;
 }
 
-#contato form .botao{
+#contato .botao{
     background: #3c06ff;
     font: 500 1rem "Poppins", sans-serif;
-    color: var(--body-color);
+    box-shadow: inset 0 0 0 0 white;
+    color: white;
     border-radius: 12px;
     border: #3c06ff;
     height: 4rem;   
     width: 100%;
     outline: none;
     border-style: none;
-    transition: 1s;
+    transition: ease-out 1s;
+}
+
+
+#contato textarea::placeholder{
+    color: var(--title-color);
 }
 
 #contato form .botao:hover{
     box-shadow: inset 600px 0 0 0 white;
-    color: var(--title-color);
+    color: hsl(var(--hue), 41%, 10%);
     cursor: pointer;
     border: #3c06ff solid;
 }
@@ -795,7 +856,7 @@ transform: scale(1.15,1.15);
 /*////////FOOTER//////*/
 
 #footer{
-    background: linear-gradient(180deg, #4200FF 0%, #5523E0 100%);
+    background: linear-gradient(180deg, var(--base-color-footer-second) 0%, var(--base-color-footer) 100%);
 }
 
 #footer .container, a{

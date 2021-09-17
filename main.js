@@ -34,13 +34,14 @@ $(".icon-menu").click(function(){
 $(".icon-x, #fechar").click(function(){
   document.getElementById("html").style.overflowY = "visible";
   document.getElementById("quadrado").style.opacity = "0"; 
+  if(!checkbox.checked)
   document.getElementById("minhaLogo").src = "assets/fotos/LogoMinha.png";
 })
 
 
 
 
-
+///bolinhas////
     $( "#home .circulo" ).hover( function(){
         $(".circulo4, .circulo2, .circulo5, .circulo7").addClass(' hover');
     }, function(){
@@ -149,3 +150,36 @@ window.addEventListener('scroll', function () {
   changeHeaderWhenScroll()
   backToTop()
 })
+
+
+///dark mode /////
+
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', () => { 
+  document.body.classList.toggle('dark');
+  if (checkbox.checked){
+    
+  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinhaWhite.png";
+  
+  var largura = window.innerWidth;
+  if (largura > 800){
+    $("#contato .container").css({'background-color':'hsl(var(--hue), 37%, 15%)'});
+    }
+
+  $("#projetos .card").hover(function(){
+    $("#projetos .card:hover").css({'background':'hsl(var(--hue), 37%, 15%)'});
+  }, function(){
+    $("#projetos .card").css({'background':'transparent'});
+  })
+  $("#contato form textarea").css({'background':'hsl(var(--hue), 32%, 17%)'});
+ 
+  }
+  else{
+    document.getElementById("minhaLogo").src = "assets/fotos/LogoMinha.png";
+    $("#contato .container").css({'background-color':'transparent'});
+    $("#contato form textarea").css({'background':'white'});
+  }
+})
+
+
