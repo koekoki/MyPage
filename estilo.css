@@ -7,7 +7,7 @@
      --base-color-alt: hsl(var(--hue), 94%, 63%);
      --base-color-footer: #4b12b6;
      --base-color-footer-second: #5314c9;
-     --title-color: hsl(var(--hue), 41%, 10%);
+     --title-color: #0f1324;
      --text-color: hsl(0, 0% ,46%);
      --text-color-light: hsl(0, 0% ,98%);
      --body-color: hsl(0, 0% ,98%);
@@ -255,7 +255,7 @@ main{
     nav.show div.icon-x{
         visibility: visible;
         opacity: 1;
-        top: 1.5rem;
+        top: 2.5rem;
     }
 
     .label {
