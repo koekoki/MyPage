@@ -159,11 +159,12 @@ const menu = document.querySelector("nav")
 
 checkbox.addEventListener('change', () => { 
   document.body.classList.toggle('dark');
+  var largura = window.innerWidth;
   if (checkbox.checked){
     
   logo.src = "assets/fotos/LogoMinhaWhite.png";
   
-  var largura = window.innerWidth;
+  
   if (largura > 800){
     $("#contato .container").css({'background-color':'hsl(var(--hue), 37%, 15%)'});
     }
@@ -178,9 +179,16 @@ checkbox.addEventListener('change', () => {
   }
   else{
     if (menu.classList.contains('show'))
-    document.getElementById("minhaLogo").src = "assets/fotos/LogoMinhaWhite.png";
+    logo.src = "assets/fotos/LogoMinhaWhite.png";
     else
     logo.src = "assets/fotos/LogoMinha.png"
+    if (largura < 900)
+    logo.src = "assets/fotos/LogoMinha.png"
+    $("#projetos .card").hover(function(){
+      $("#projetos .card:hover").css({'background':'white'});
+    }, function(){
+      $("#projetos .card").css({'background':'transparent'});
+    })
     $("#contato .container").css({'background-color':'transparent'});
     $("#contato form textarea").css({'background':'white'});
   }
