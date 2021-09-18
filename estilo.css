@@ -185,8 +185,8 @@ main{
     }
     
     nav .menu{
-        transition: 0.4s;
-        left: 30rem;
+        transition: 0.5s;
+        left: 70rem;
     }
     
     nav .menu ul{
@@ -199,7 +199,7 @@ main{
         background: var(--body-color);
         height: 100vh;
         width: 100vw;
-        padding-top: 120px;
+       
         display: block;
         position: fixed;
         top: 0;
@@ -227,6 +227,7 @@ main{
         
     nav.show .menu ul{
         display: grid;
+        margin-top: 120px;
     }
     
     nav.show ul.grid{
@@ -241,22 +242,68 @@ main{
         z-index: 10;
     }
     
-    nav .icon-x{
-        visibility: hidden;
+    .hamburguer{
+        width: 50px;
+        height: 50px;
+    
+        border-radius: 10%;
+    
+        position: relative;
+        z-index: 99;
+    }
+    
+    .hamburguer:after{
+        content: '';
     
         position: absolute;
-        top: -2.5rem;
-        right: 1.5rem;
-        z-index: 100;
+        top: 20%;
+        left: 15%;
     
-        transition: 0.2s;
+        width: 70%;
+        height: 10%;
+    
+        border-radius: 20px;
+    
+        background-color: white;
+    
+        transition: 1s ease;
+        z-index: 99;
     }
     
-    nav.show div.icon-x{
-        visibility: visible;
-        opacity: 1;
-        top: 2.5rem;
+    .hamburguer:before{
+        content: '';
+    
+        position: absolute;
+        top: 60%;
+        left: 15%;
+    
+        width: 70%;
+        height: 10%;
+    
+        border-radius: 20px;
+    
+        background-color: white;
+    
+        transition: 1s ease;
+        z-index: 99;
     }
+    
+    #hamburguer:checked ~ label .hamburguer:after{
+        transform: rotate(225deg);
+    
+        top: 45%;
+        left: 15%;
+        background-color: var(--title-color);
+    }
+    
+    #hamburguer:checked ~ label .hamburguer:before{
+        transform: rotate(-225deg);
+    
+        top: 45%;
+        left: 15%;
+        background-color: var(--title-color);
+    }
+    
 
     .label {
         cursor: pointer;
@@ -856,7 +903,7 @@ transform: scale(1.15,1.15);
 /*////////FOOTER//////*/
 
 #footer{
-    background: linear-gradient(180deg, var(--base-color-footer-second) 0%, var(--base-color-footer) 100%);
+    background: linear-gradient(180deg, var(--base-color-alt) 0%, var(--base-color-second) 100%);
 }
 
 #footer .container, a{

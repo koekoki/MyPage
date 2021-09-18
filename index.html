@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
         rel="stylesheet">
-
+    <link rel="shortcut icon" href="assets/fotos/icone.png">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
     <title>Kaiky Matsumoto</title>
@@ -40,11 +40,11 @@
             <div class="menu">
                 
                     <ul class="grid">
-                        <li><a class="title-2" id = "fechar" href="#home">Início</a></li>
-                        <li><a class="title-2" id = "fechar" href="#sobre">Sobre</a></li>
-                        <li><a class="title-2" id = "fechar" href="#projetos">Projetos</a></li>
-                        <li><a class="title-2" id = "fechar" href="#skills">Skills</a></li>
-                        <li><a class="title-2" id = "fechar" href="#contato">Contato</a></li>
+                        <li><a class="title-2" onclick = "remover()" href="#home">Início</a></li>
+                        <li><a class="title-2" onclick = "remover()" href="#sobre">Sobre</a></li>
+                        <li><a class="title-2" onclick = "remover()" href="#projetos">Projetos</a></li>
+                        <li><a class="title-2" onclick = "remover()" href="#skills">Skills</a></li>
+                        <li><a class="title-2" onclick = "remover()" href="#contato">Contato</a></li>
                         <hr>
                         <div>
                             <a href="https://www.instagram.com/matusumotu/" target="blanck"><i class="icon-instagram"></i></a>
@@ -65,8 +65,12 @@
               
             </label>
 
-            <div class="toggle icon-menu"></div>
-            <div class="toggle icon-x"></div>
+
+            <input id = "hamburguer" type="checkbox">
+            <label for="hamburguer">
+                <div class = "hamburguer toggle"> </div>
+            </label>
+
         </nav>
     </header>
     <main>

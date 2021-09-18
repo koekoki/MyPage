@@ -21,24 +21,6 @@ window.addEventListener('scroll', function(){
 })
 
 
-$(".icon-menu").click(function(){
-  var largura = window.innerWidth;
-  document.getElementById("html").style.overflowY = "hidden";
-  document.getElementById("quadrado").style.opacity = "1";
-  if (largura > 800){
-  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinhaWhite.png";
-  }
-})
-
-$(".icon-x, #fechar").click(function(){
-  document.getElementById("html").style.overflowY = "visible";
-  document.getElementById("quadrado").style.opacity = "0"; 
-  if(!checkbox.checked)
-  document.getElementById("minhaLogo").src = "assets/fotos/LogoMinha.png";
-})
-
-
-
 
 ///bolinhas////
     $( "#home .circulo" ).hover( function(){
@@ -153,9 +135,15 @@ window.addEventListener('scroll', function () {
 
 ///dark mode /////
 
+
+
 const checkbox = document.getElementById('checkbox');
+const hamburguer = document.getElementById('hamburguer');
 const logo = document.getElementById("minhaLogo");
 const menu = document.querySelector("nav")
+
+if (menu.classList.contains('menu'))
+$('.hamburguer').css({'backgound-color':'black'})
 
 checkbox.addEventListener('change', () => { 
   document.body.classList.toggle('dark');
@@ -164,6 +152,7 @@ checkbox.addEventListener('change', () => {
     
   logo.src = "assets/fotos/LogoMinhaWhite.png";
   
+
   
   if (largura > 800){
     $("#contato .container").css({'background-color':'hsl(var(--hue), 37%, 15%)'});
@@ -193,5 +182,38 @@ checkbox.addEventListener('change', () => {
     $("#contato form textarea").css({'background':'white'});
   }
 })
+
+///menu hamburguer/////
+
+hamburguer.addEventListener('change', () => { 
+  if (hamburguer.checked){
+    var largura = window.innerWidth;
+    document.getElementById("html").style.overflowY = "hidden";
+    document.getElementById("quadrado").style.opacity = "1";
+
+    if (largura > 800){
+    logo.src = "assets/fotos/LogoMinhaWhite.png";
+    }
+ 
+  }
+  else {
+    document.getElementById("html").style.overflowY = "visible";
+    document.getElementById("quadrado").style.opacity = "0";
+    if (!checkbox.checked){
+      logo.src = "assets/fotos/LogoMinha.png";
+    }   
+  }
+})
+
+function remover(){
+  document.getElementById("html").style.overflowY = "visible";
+  document.getElementById("quadrado").style.opacity = "0";
+  $('#hamburguer').prop('checked', false);
+  if (!checkbox.checked)
+  logo.src = "assets/fotos/LogoMinha.png";
+}
+
+
+
 
 
