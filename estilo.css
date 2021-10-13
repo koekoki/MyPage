@@ -264,7 +264,7 @@ main{
     
         border-radius: 20px;
     
-        background-color: white;
+        background-color: var(--title-color);
     
         transition: 1s ease;
         z-index: 99;
@@ -282,7 +282,7 @@ main{
     
         border-radius: 20px;
     
-        background-color: white;
+        background-color: var(--title-color);
     
         transition: 1s ease;
         z-index: 99;
@@ -562,9 +562,8 @@ main #home{
     margin-right: 4px;
 }
 
-#sobre a{
+#sobre .sub-container a{
     background: linear-gradient( var(--base-color-alt), #4c3fff);
-    font: 500 1rem "Poppins", sans-serif;
     color: hsl(0, 0% ,98%);
     border-radius: 12px;
     height: 3.5rem;   
@@ -575,7 +574,18 @@ main #home{
     justify-content: center;
     align-items: center;
 }
-#sobre .block{}
+
+#sobre #me a{
+    color: var(--base-color-alt);
+
+} 
+#sobre #me a:hover{
+    color: var(--title-color);
+
+} 
+
+
+
 
 /*/////projetos///////*/
 
@@ -613,12 +623,10 @@ main #home{
     background: white;
 }
 
-
-@media (min-width: 360px){
-    #projetos .card .title-2{
-        font-size: 1.8rem;
-    }
+#projetos .card .title-2{
+    font-size: 1.6rem;
 }
+
 
 @media (max-width: 361px){
     
@@ -669,6 +677,10 @@ transform: scale(1.15,1.15);
     background: rgb(10, 7, 209);
 }
 
+#projetos .calculadora {
+    background: rgb(16, 138, 5);
+}
+
 #projetos a{
     height: 4.375rem;
     width: 12.21875rem;
@@ -685,6 +697,17 @@ transform: scale(1.15,1.15);
 #projetos img{
     height: 10rem;
     width: 10rem;
+    margin-top: 1rem;
+}
+
+#projetos .img-calculadora{
+    height: 8rem;
+    width: 8rem;
+}
+
+#projetos .img-LCW{
+    height: 13rem;
+    width: 13rem;
 }
 
 /* swiper */
@@ -1019,6 +1042,14 @@ transform: scale(1.15,1.15);
         font-size: 4rem;
     }
     
+        
+    .hamburguer:after{
+        background-color: white;
+    }
+    
+    .hamburguer:before{
+        background-color: white;
+    }
 
 
     /* ////HOME///////*/
@@ -1036,7 +1067,7 @@ transform: scale(1.15,1.15);
         margin-bottom: 8rem;
     }
 
-    #sobre a{
+    #sobre .sub-container a{
         width: 100%;
         height: 5rem;
     }
@@ -1218,6 +1249,9 @@ transform: scale(1.15,1.15);
 
     #projetos .text{
         font-size: 1.25rem;
+    }
+    #projetos .card .title-2{
+        font-size: 1.8rem;
     }
 
     #projetos .swiper-button-next, .swiper-button-prev{

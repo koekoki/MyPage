@@ -212,8 +212,3 @@ function remover(){
   if (!checkbox.checked)
   logo.src = "assets/fotos/LogoMinha.png";
 }
-
-
-
-
-
