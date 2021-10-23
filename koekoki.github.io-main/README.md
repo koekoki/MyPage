@@ -1,3 +1,0 @@
-# MyPage
-
-Meu belissimo portfólio ❤️
