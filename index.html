@@ -336,26 +336,29 @@
                         <label class = "text" > <i class="icon-envelope"></i> kaiky.matsumoto@gmail.com</label><br>
                         <label class = "text" > <i class = "icon-home"></i> Jardim Tremembé, São Paulo (SP)</label>
                     </div>
-                    <form>
+                    <form action="https://api.staticforms.xyz/submit" method="POST">
+                        <input type="hidden" name="accessKey" value="92c3a063-d392-4d63-b03d-bb49b6b6f44a">
                         <div class="info-box">
-                            <input class="text" type="text" name="nome" required="">
+                            <input class="text" type="text" name="nome" required>
                             <label class="text"><i class="icon-user"></i> Seu nome:</label>
                         </div>
                         <div class="info-box">
-                            <input class="text" type="text" name="email" required="">
+                            <input class="text" type="email" name="email" required>
                             <label class="text"> <i class="icon-paperplane"></i> Email:</label>
                         </div>
                         <div class="info-box">
-                            <input class="text" type="tel" name="telefone" required="">
+                            <input class="text" type="tel" name="phone" required>
                             <label class="text">Telefone:</label>
                         </div>
                         <div class="info-box">
-                            <input class="text" type="text" name="assunto" required="">
+                            <input class="text" type="text" name="subject" required>
                             <label class="text">Assunto:</label>
                         </div>
-                        <textarea class="text" name="texto" id="" placeholder="Mensagem: "></textarea>
+                        <textarea class="text" name="message" placeholder="Mensagem: "></textarea>
                         <input type="submit" value="Enviar" class="botao">
                         
+                        <input type="hidden" name="redirectTo" value="https://koekoki.github.io/#contato">
+
                     </form>
                 </div>
         </div>
@@ -364,15 +367,21 @@
     <footer>
         <section id="footer">
             <div class="container grid section">
-                         
-                <label>(11)94275-7764</label>
-                <label > kaiky.matsumoto@gmail.com</label>
-                <label for="copy">©2021 KAIKY MATSUMOTO</label>
+                <div class = "right map"><strong> Site map</strong></div> 
+                <div class="right"><a class = "map" href="#header">Inicio</a> </div>
+                <div class = "conteudo"><p >(11)94275-7764</p>  <a class = "map" href="#sobre" > sobre</a></div> 
+                <div class = "conteudo"><p > kaiky.matsumoto@gmail.com</p> <a class = "map" href="#projetos" > Projetos</a> </div>
+                <div class = "conteudo"><p for="copy">©2021 KAIKY MATSUMOTO</p><a class = "map" href="#skills" >Hard Skills</a> </div>
+                
                 <hr>      
             <div>
                 <a href="https://www.instagram.com/matusumotu/" target="blanck"><i class="icon-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/kaiky-matsumoto/" target="blanck"> <i class="icon-linkedin"></i></a>
                 <a href="https://github.com/koekoki" target="blanck"><i class="icon-github"></i></a>
+            </div>
+            <div>
+               
+                
             </div>
         </div>
         </section>
