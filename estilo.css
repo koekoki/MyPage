@@ -765,6 +765,10 @@ transform: scale(1.15,1.15);
 #skills #habilidades img:hover {
     transform: translateY(-8px);
 }
+#skills #java img{
+    height: 2.5625rem;
+    width: 2.5625rem;
+}
 
 #skills #habilidades img{
     height: 5.5625rem;
@@ -792,6 +796,7 @@ transform: scale(1.15,1.15);
 #skills #java .dividider-2{
     box-shadow: inset 70px 0 0 0 white;
 }
+
 #skills #html .dividider-2{
     box-shadow: inset 60px 0 0 0 white;
 }
@@ -1296,6 +1301,10 @@ transform: scale(1.15,1.15);
     #skills #java .dividider-2{
         box-shadow: inset 300px 0 0 0 white;
     }
+    #skills #java img{
+        height: 24.5625rem;
+        width: 24.5625rem;
+    }
     #skills #html .dividider-2{
         box-shadow: inset 240px 0 0 0 white;
     }
@@ -1306,10 +1315,10 @@ transform: scale(1.15,1.15);
         box-shadow: inset 210px 0 0 0 white;
     }
     #skills #sql .dividider-2{
-        box-shadow: inset 130px 0 0 0 white;
+        box-shadow: inset 200px 0 0 0 white;
     }
-    #skills #php .dividider-2{
-        box-shadow: inset 140px 0 0 0 white;
+    #skills #C-Sharp .dividider-2{
+        box-shadow: inset 300px 0 0 0 white;
     }
 
     #skills #habilidades .dividider-2{
@@ -1326,14 +1335,6 @@ transform: scale(1.15,1.15);
         height: 15rem;
         width: 15rem;
     }
-
-
-    #video iframe{
-        width: 1280px;
-        height: 720px;
-    }
-
-
 
     #contato form .botao{
         margin-bottom: 5rem;
